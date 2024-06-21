@@ -1,0 +1,44 @@
+.wrapper {
+    position: relative;
+    & > .input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        color: #555;
+        box-sizing: border-box;
+        font-family: "Arvo";
+        font-size: 18px;
+        padding: 10px 10px;
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+    }
+    & > .underline {
+        position: absolute;
+        transform-origin: 0px;
+        background-color: dodgerblue;
+        display: inline-block;
+        height: 2px;
+        margin-top: -4px;
+        left:0px;
+        top: 50px;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+        width: 100%;
+    }
+
+    & > .input::-webkit-input-placeholder {
+        color: #aaa;
+    }
+
+    & > .input:focus::-webkit-input-placeholder {
+        color: dodgerblue;
+    }
+
+    & > .input:focus + .underline {
+        transform: scale(1);
+    }
+}
